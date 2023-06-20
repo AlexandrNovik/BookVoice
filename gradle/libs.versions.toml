@@ -1,0 +1,69 @@
+[versions]
+versionCode = "1"
+versionName = "0.0.1"
+
+sdk-compile = "33"
+sdk-min = "26"
+sdk-target = "33"
+
+coroutines = "1.7.1"
+room = "2.5.1"
+materialDialog = "3.3.0"
+dagger = "2.46.1"
+kotlin = "1.8.21"
+compose-compiler = "1.4.7"
+retrofit = "2.9.0"
+ktlint = "0.49.1"
+agp = "8.0.2"
+
+[libraries]
+androidxCore = "androidx.core:core-ktx:1.10.1"
+coil = "io.coil-kt:coil-compose:2.4.0"
+
+lifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:2.6.1"
+
+
+junit = "junit:junit:4.13.2"
+robolectric = "org.robolectric:robolectric:4.10.3"
+
+androidX-test-runner = "androidx.test:runner:1.5.2"
+androidX-test-junit = "androidx.test.ext:junit:1.1.5"
+androidX-test-core = "androidx.test:core-ktx:1.5.0"
+
+compose-bom = "androidx.compose:compose-bom:2023.06.00"
+compose-ui-ui = { module = "androidx.compose.ui:ui" }
+compose-ui-tooling-core = { module = "androidx.compose.ui:ui-tooling" }
+compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
+compose-foundation = { module = "androidx.compose.foundation:foundation" }
+compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
+compose-ui-test = { module = "androidx.compose.ui:ui-test" }
+compose-ui-testJunit = { module = "androidx.compose.ui:ui-test-junit4" }
+compose-ui-testManifest = { module = "androidx.compose.ui:ui-test-manifest" }
+compose-material-icons-core = { module = "androidx.compose.material:material-icons-core" }
+compose-material-icons-extended = { module = "androidx.compose.material:material-icons-extended" }
+compose-animation-graphics = { module = "androidx.compose.animation:animation-graphics" }
+compose-animation-animation = { module = "androidx.compose.animation:animation" }
+compose-material3 = { module = "androidx.compose.material3:material3" }
+compose-activity = "androidx.activity:activity-compose:1.7.2"
+compose-navigation = "dev.olshevski.navigation:reimagined:1.4.0"
+
+# For these dependencies we only use the version but declare full artifacts so renovate can update the version
+compose-compiler = { module = "androidx.compose.compiler:compiler", version.ref = "compose-compiler" }
+ktlint = { module = "com.pinterest.ktlint:ktlint-core", version.ref = "ktlint" }
+compose-ktlint = "io.nlopez.compose.rules:ktlint:0.1.10"
+
+[bundles]
+compose = [
+    "compose-ui-ui",
+    "compose-ui-tooling-preview",
+    "compose-foundation",
+    "compose-navigation",
+    "compose-material-icons-core",
+    "compose-material-icons-extended",
+    "compose-animation-graphics",
+    "compose-animation-animation",
+    "androidxCore",
+    "compose-material3",
+    "compose-activity",
+    "coil",
+]

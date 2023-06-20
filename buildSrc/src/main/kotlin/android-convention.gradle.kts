@@ -2,12 +2,18 @@ import com.android.build.gradle.BaseExtension
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 android {
-    compileSdkVersion(33)
+    val libs: VersionCatalog =
+        extensions.getByType(VersionCatalogsExtension::class.java).named("libs")
+    val sdkMinVersion = libs.findVersion("sdk-min").get().requiredVersion.toInt()
+    val sdkTargetVersion = libs.findVersion("sdk-target").get().requiredVersion.toInt()
+
+    compileSdkVersion(sdkTargetVersion)
     defaultConfig {
-        minSdk = 24
-        targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
+        multiDexEnabled = true
+        minSdk = sdkMinVersion
+        targetSdk = sdkTargetVersion
+        versionCode = libs.findVersion("versionCode").get().requiredVersion.toInt()
+        versionName = libs.findVersion("versionName").get().requiredVersion
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -33,10 +39,6 @@ android {
         }
     }
 
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.7"
-    }
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -47,6 +49,16 @@ android {
 tasks.withType<KotlinCompile>().configureEach {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
+        val optIns = listOf(
+            "kotlin.RequiresOptIn",
+            "kotlin.ExperimentalStdlibApi",
+            "kotlin.contracts.ExperimentalContracts",
+            "kotlin.time.ExperimentalTime",
+            "kotlinx.coroutines.ExperimentalCoroutinesApi",
+            "kotlinx.coroutines.FlowPreview",
+        )
+        freeCompilerArgs =
+            (freeCompilerArgs + listOf("-progressive") + optIns.map { "-opt-in=$it" })
     }
 }
 
