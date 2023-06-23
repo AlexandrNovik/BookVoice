@@ -1,11 +1,9 @@
-package com.aimobiapps.onphone.utils.extensions
+package com.escodro.core.extension
 
-import android.content.ContentResolver
 import android.graphics.Bitmap
 import android.graphics.Matrix
-import android.net.Uri
-import android.util.Size
-import androidx.exifinterface.media.ExifInterface
+
+/*import androidx.exifinterface.media.ExifInterface
 
 fun Bitmap.scale(maxDimension: Int): Bitmap {
     val size = Size(width, height) scaleWith maxDimension
@@ -29,7 +27,7 @@ fun Bitmap.normalizeRotation(uri: Uri, contentResolver: ContentResolver): Bitmap
             else -> this
         }
     }
-}
+}*/
 
 fun Bitmap.rotate(angle: Float): Bitmap {
     val matrix = Matrix()
