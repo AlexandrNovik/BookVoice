@@ -1,10 +1,22 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
-    id("com.android.library") apply false
-    id("com.android.application") apply false
-    kotlin("android") apply false
+    alias(libs.plugins.dependencyanalysis)
+}
+buildscript {
+    repositories {
+        mavenCentral()
+        google()
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath(libs.android.gradle.plugin)
+        classpath(libs.kotlin.gradle.plugin)
+        classpath(libs.aboutlibraries.plugin)
+    }
 }
 
-subprojects {
-    apply(plugin = "detekt-convention")
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
 }

@@ -1,21 +1,17 @@
-@file:Suppress("UnstableApiUsage")
-
 include(":app")
+include(":libraries:core")
+include(":libraries:test")
+include(":libraries:splitInstall")
+include(":libraries:designsystem")
+include(":libraries:navigation")
 
 pluginManagement {
     repositories {
-        google()
-        mavenCentral()
         gradlePluginPortal()
-    }
-}
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
         mavenCentral()
+        google()
+        includeBuild("plugins")
     }
 }
-rootProject.name = "BookVoice"
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
