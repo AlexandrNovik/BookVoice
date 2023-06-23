@@ -24,6 +24,7 @@ lifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:2.6.1"
 
 
 junit = "junit:junit:4.13.2"
+junit-ext = "androidx.test.ext:junit:1.1.5"
 robolectric = "org.robolectric:robolectric:4.10.3"
 
 androidX-test-runner = "androidx.test:runner:1.5.2"

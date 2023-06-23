@@ -1,3 +1,7 @@
+@file:Suppress("UnstableApiUsage")
+
+include(":app")
+
 pluginManagement {
     repositories {
         google()
@@ -13,4 +17,5 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "BookVoice"
-include ':app'
+
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
