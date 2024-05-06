@@ -26,5 +26,5 @@ gradlePlugin {
 dependencies {
     implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.23.0")
     implementation("com.android.tools.build:gradle:8.0.2")
-    implementation(kotlin("gradle-plugin", version = "1.8.21"))
+    implementation(kotlin("gradle-plugin", version = "1.9.23"))
 }

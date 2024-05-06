@@ -2,26 +2,25 @@
 versionCode = "1"
 versionName = "0.0.1"
 
-sdk-compile = "33"
+sdk-compile = "34"
 sdk-min = "26"
-sdk-target = "33"
+sdk-target = "34"
 
 coroutines = "1.7.1"
 room = "2.5.1"
 materialDialog = "3.3.0"
 dagger = "2.46.1"
-kotlin = "1.8.21"
-compose-compiler = "1.4.7"
+kotlin = "1.9.23"
+compose-compiler =  "1.5.13"
 retrofit = "2.9.0"
 ktlint = "0.49.1"
 agp = "8.0.2"
 
 [libraries]
-androidxCore = "androidx.core:core-ktx:1.10.1"
+androidxCore = "androidx.core:core-ktx:1.13.1"
 coil = "io.coil-kt:coil-compose:2.4.0"
 
-lifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:2.6.1"
-
+lifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:2.7.0"
 
 junit = "junit:junit:4.13.2"
 junit-ext = "androidx.test.ext:junit:1.1.5"
@@ -31,7 +30,7 @@ androidX-test-runner = "androidx.test:runner:1.5.2"
 androidX-test-junit = "androidx.test.ext:junit:1.1.5"
 androidX-test-core = "androidx.test:core-ktx:1.5.0"
 
-compose-bom = "androidx.compose:compose-bom:2023.06.00"
+compose-bom = "androidx.compose:compose-bom:2024.05.00"
 compose-ui-ui = { module = "androidx.compose.ui:ui" }
 compose-ui-tooling-core = { module = "androidx.compose.ui:ui-tooling" }
 compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
@@ -45,7 +44,7 @@ compose-material-icons-extended = { module = "androidx.compose.material:material
 compose-animation-graphics = { module = "androidx.compose.animation:animation-graphics" }
 compose-animation-animation = { module = "androidx.compose.animation:animation" }
 compose-material3 = { module = "androidx.compose.material3:material3" }
-compose-activity = "androidx.activity:activity-compose:1.7.2"
+compose-activity = "androidx.activity:activity-compose:1.9.0"
 compose-navigation = "dev.olshevski.navigation:reimagined:1.4.0"
 
 # For these dependencies we only use the version but declare full artifacts so renovate can update the version
